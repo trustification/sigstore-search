@@ -1,8 +1,8 @@
 [package]
-name = "verifyit"
+name = "sigstore-search"
 version = "0.1.0"
 edition = "2021"
-description = "Yew.rs app example using Sigstore"
+description = "Yew.rs app example using Sigstore for searching Rekor"
 readme = "README.md"
 license = "MIT OR Apache-2.0"
 keywords = ["yew", "trunk", "sigstore"]
@@ -11,8 +11,17 @@ categories = ["gui", "wasm", "web-programming"]
 [dependencies]
 yew = { version="0.20", features=["csr"] }
 sigstore = { version = "0.6.0", default-features = false }
+log = "0.4"
+wasm-bindgen-futures = { version = "0.4.33" }
+wasm-logger = "0.2.0"
+web-sys = { version = "0.3.60", features = ["HtmlParagraphElement"] }
+yew-hooks = "0.2.0"
+chrono = "0.4.23"
 
 [patch.crates-io]
 sigstore = { path = "../sigstore-rs" }
 tough = { path = "../tough/tough" }
 oci-distribution = { path = "../oci-distribution" }
+
+[profile.release]
+lto = true
