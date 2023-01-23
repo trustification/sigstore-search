@@ -1,0 +1,18 @@
+[package]
+name = "verifyit"
+version = "0.1.0"
+edition = "2021"
+description = "Yew.rs app example using Sigstore"
+readme = "README.md"
+license = "MIT OR Apache-2.0"
+keywords = ["yew", "trunk", "sigstore"]
+categories = ["gui", "wasm", "web-programming"]
+
+[dependencies]
+yew = { version="0.20", features=["csr"] }
+sigstore = { version = "0.6.0", default-features = false }
+
+[patch.crates-io]
+sigstore = { path = "../sigstore-rs" }
+tough = { path = "../tough/tough" }
+oci-distribution = { path = "../oci-distribution" }
