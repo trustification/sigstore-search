@@ -10,7 +10,7 @@ categories = ["gui", "wasm", "web-programming"]
 
 [dependencies]
 yew = { version="0.20", features=["csr"] }
-sigstore = { version = "0.6.0", default-features = false }
+sigstore = { version = "0.6.0", default-features = false, features = ["rekor"] }
 log = "0.4"
 wasm-bindgen-futures = { version = "0.4.33" }
 wasm-logger = "0.2.0"
@@ -20,8 +20,6 @@ chrono = "0.4.23"
 
 [patch.crates-io]
 sigstore = { path = "../sigstore-rs" }
-tough = { path = "../tough/tough" }
-oci-distribution = { path = "../oci-distribution" }
 
 [profile.release]
 lto = true
